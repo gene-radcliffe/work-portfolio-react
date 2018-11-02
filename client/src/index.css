@@ -13,7 +13,7 @@ body, html{
 
 .hero{
   height: 50%;
-  background-image::
+  background-color: white;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
