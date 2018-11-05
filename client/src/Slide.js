@@ -2,62 +2,56 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import 'spectre.css/dist/spectre.css';
 import ReactDom from 'react-dom'
+import PropTypes from 'prop-types';
 
 const default_style={
     display: 'block',
-}
+}   
 
-class Slides extends Component{
+class Slide extends Component{
+    
     constructor(props){
         super(props)
-        this.state = {
-            style_props: null,
+        this.state={
             children: null,
-            current_slide:0,
         }
-        console.log("Initialize")
+       console.log("prop" + this.props.slideNumber)
     }
 
     componentDidMount(){
-        console.log("Mount")
-        const cloned_children = React.Children.map(this.props.children, child =>{
+        console.log("mount slide")
+        const cloned_children = React.Children.map(this.props.slides, child =>{
             return React.cloneElement(child, {
                 style: default_style,
                 className: "Slide"
             })
         })
-        
+        console.log("cloned " + cloned_children)
         this.setState({children: cloned_children})
        
     }
+    componentDidUpdate(){
+        console.log("Update")
+    }
     
     renderSlide(){
-        var index = this.state.current_slide
+        var index = this.props.slideNumber
+        console.log("index" + index)
         const slide = React.Children.map(this.state.children, (child, child_index) =>{
             if(index == child_index){
                 return child;
             }
         })
-
-        return slide
-    }
-
-    nextSlide(){
-        
-        this.setState({current_slide: 1})
-        
+        return slide;
     }
     render(){
-        
         return(
             <React.Fragment>
-                <div id="slides-container">
-                   <div id="slides">{this.renderSlide()}</div>  
-                   <button className="btn" onClick={this.nextSlide}>Next </button>   
-                </div>   
-           </React.Fragment>
-        )
+                {this.renderSlide()}
+            </React.Fragment>)
     }
 }
-
-export default Slides
+Slide.propTypes ={
+    slideNumber: PropTypes.number
+}
+export default Slide;
