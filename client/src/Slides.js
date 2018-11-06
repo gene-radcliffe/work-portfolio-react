@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import 'spectre.css/dist/spectre.css';
+import 'spectre.css/dist/spectre-icons.css'
 import ReactDom from 'react-dom'
 
 const default_style={
@@ -13,13 +14,18 @@ class Slides extends Component{
         this.state = {
             style_props: null,
             children: null,
-            current_slide:0,
+            current_slide:null,
+            slide_count:null,
         }
-        console.log("Initialize")
-    }
+        this.moveToNextSlide = this.moveToNextSlide.bind(this);
+        this.moveToPreviousSlide= this.moveToPreviousSlide.bind(this);
 
+    }
+    componentDidUpdate(){
+        
+    }
     componentDidMount(){
-        console.log("Mount")
+        
         const cloned_children = React.Children.map(this.props.children, child =>{
             return React.cloneElement(child, {
                 style: default_style,
@@ -27,10 +33,42 @@ class Slides extends Component{
             })
         })
         
-        this.setState({children: cloned_children})
+        this.setState({children: cloned_children,
+                      current_slide: 0,
+                      slide_count: React.Children.count(cloned_children)
+        })
+        
+    }
+    moveToPreviousSlide(){
+        if(this.state.current_slide == 0){
+            console.log("return")
+            return
+        }
+       
+        if(this.state.current_slide >= 1){
+            console.log("setting")
+            this.setState(state =>{
+                return{current_slide: state.current_slide -1 }
+            }) 
+        }
+        
+    }
+    moveToNextSlide(){
+       
+        if(this.state.current_slide == this.state.slide_count-1){
+           
+            return
+        }else{
+           
+            this.setState( (state)=>{
+                return {current_slide: (state.current_slide + 1)}
+            })
+        }
+        
+        
        
     }
-    
+
     renderSlide(){
         var index = this.state.current_slide
         const slide = React.Children.map(this.state.children, (child, child_index) =>{
@@ -42,21 +80,42 @@ class Slides extends Component{
         return slide
     }
 
-    nextSlide(){
-        
-        this.setState({current_slide: 1})
+    renderNavigatorNextButton(){
+       
+        return <button className="btn" onClick={this.moveToNextSlide}><i className="icon icon-arrow-right"></i></button>  
         
     }
+    renderNavigatorPreviousButton(){
+        return <button className="btn" onClick={this.moveToPreviousSlide}><i className="icon icon-arrow-left"></i></button> 
+
+    }
+    
+    
+    renderRegular(){
+        return this.state.children
+    }
+    
     render(){
-        
-        return(
-            <React.Fragment>
-                <div id="slides-container">
-                   <div id="slides">{this.renderSlide()}</div>  
-                   <button className="btn" onClick={this.nextSlide}>Next </button>   
-                </div>   
-           </React.Fragment>
-        )
+        if(this.props.config.buttons == true){
+            return(
+                <React.Fragment>
+                    <div id="slides-container">
+                    <div>{this.renderNavigatorPreviousButton()}</div>
+                    <div>{this.renderSlide()}</div>
+                    <div>{this.renderNavigatorNextButton()}</div>
+                    </div>   
+                </React.Fragment>
+            )
+        }
+        if(this.props.config.carousel == false){
+            return(
+                <React.Fragment>
+                    <div id="slides-container">
+                    <div>{this.renderRegular()}</div>
+                    </div>   
+                </React.Fragment>
+            )
+        }
     }
 }
 
