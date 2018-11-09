@@ -27,9 +27,9 @@ const SocialLinks = props =>{
     let size = props.size
     return(
         <React.Fragment>
-            <a href="https://github.com/gene-radcliffe"><FontAwesomeIcon className="social-icons" size={size} icon={['fab', 'github']} /></a>
-            <a href="https://www.linkedin.com/in/gene-radcliffe-50203b13/"> <FontAwesomeIcon className="social-icons"  size={size} icon={['fab', 'linkedin']}/></a>
-            <a href="mailto:g_radcliffe82@hotmail.com" target="_top"> <FontAwesomeIcon className="social-icons" size={size} icon={['fa', 'envelope']}/></a>
+            <a className="icons col-4" href="https://github.com/gene-radcliffe"><FontAwesomeIcon className="social-icons" size={size} icon={['fab', 'github']} /></a>
+            <a className="icons col-4" href="https://www.linkedin.com/in/gene-radcliffe-50203b13/"> <FontAwesomeIcon className="social-icons"  size={size} icon={['fab', 'linkedin']}/></a>
+            <a className="icons col-4" href="mailto:g_radcliffe82@hotmail.com" target="_top"> <FontAwesomeIcon className="social-icons" size={size} icon={['fa', 'envelope']}/></a>
         </React.Fragment>
     )   
 }
@@ -51,11 +51,11 @@ class Portfolio extends Component{
             
            <div className="hero">
             
-            <Hero className="hero-box">
+            <Hero className="hero-box col-12">
               <Span className="h1 hero-box_text text-center">gene radcliffe</Span>
               <Span className="hero-box_text text-center" style={hero_sd_font}>software developer</Span> 
-              <div className="hero-social col-12"  >
-                <SocialLinks size={size}/>
+              <div className="hero-social col-4"  >
+                <SocialLinks  size={size}/>
               </div>
             </Hero>
            </div> 

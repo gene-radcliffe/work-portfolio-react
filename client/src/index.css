@@ -15,7 +15,7 @@ a{
   /* position:relative;
   display:inline;
   left: 33%; */
-  margin: 9%;
+  
 
 }
 .social-icons{
@@ -38,7 +38,7 @@ a{
 }
 
 .hero-box{
-  width: 30%;
+  
   margin: 0 auto;
   display:block;
   position: relative;
@@ -48,8 +48,13 @@ a{
   
   
 }
+.icons{
+  display: inline-block;
+  text-align: center;
+}
 .hero-social{
-  
+  display:block;
+  margin: 0 auto;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
