@@ -8,16 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body, html, #root{
+body, html, #root, #index{
   height: 100%;
 }
-a{
-  /* position:relative;
-  display:inline;
-  left: 33%; */
-  
 
-}
 .social-icons{
   text-decoration: none;
   color: rgba(47,97,162,0.9);
