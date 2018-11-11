@@ -30,7 +30,7 @@ function Home(){
             <SocialLinks  size="lg"/>
         </div>
         <Link to="/resume">Resume</Link>
-        <p onClick={alpha}>Projects</p>
+        <a onClick={alpha}>Projects</a>
         </Hero>
         
     </div> 

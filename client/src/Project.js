@@ -75,7 +75,7 @@ class Project extends Component{
                             <div className="card-subtitle text-gray"></div>
                         </div>
 
-                        <div className="card-image project-card_image"></div>
+                        <div className="card-image project-card_image"><img src="https://s3.amazonaws.com/generadcliffe/images/glovebox.png" /></div>
                         <div className="card-body">Glovebox provides users with a practical and efficient way of keeping track of vehicle maintenance. Declutter your glovebox and still keep the records that can increase your car's resale value!</div>
 
                         <div className="card-footer project-card_footer">
