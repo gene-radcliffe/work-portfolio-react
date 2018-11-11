@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body, html, #root, #index{
+body, html, #root, #index, .home-index{
   height: 100%;
 }
 
@@ -21,10 +21,10 @@ body, html, #root, #index{
   text-decoration: none;
   color:white;
 }
-.hero{
+.hero-header{
  
   background-image: linear-gradient( rgba(8,3,42,1),rgba(47, 97, 162, 0.7)), url('https://s3.amazonaws.com/generadcliffe/images/keyboard.jpg');
-  height: 100%;
+  height: 80%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,7 +54,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.projects{
+  display:block;
+}
+.project-card{
+  width: 100%;
+  overflow: auto;
+}
+.project-card_header{
+  float: left;
+  width: 50%;
+}
+.project-card_header{
+  float: left;
+  width: 50%;
+}
+.project-card_body{
+  float:clear;
+  display: block;
+  width:100%;
+}
+.project-card_footer{
+  display: block;
+  width:100%;
+}
 @media only screen and (max-width: 375px) {
   /* For mobile phones: */
   body, html, #root {

@@ -13,29 +13,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 library.add(fab, faEnvelope)
 
 function Home(){
-    const size = "lg"
+   
+    function alpha(){
+        let element = document.getElementById("project")
+        element.scrollIntoView()
+    }
     return(
-
-        <div className="hero">
+        
+        <div className="home-index">
+        <div className="hero-header">
             
         <Hero className="hero-box col-12">
-          <Span className="h1 hero-box_text text-center">gene radcliffe</Span>
-          <Span className="hero-box_text text-center" style={hero_sd_font}>software developer</Span> 
-          <div className="hero-social col-4"  >
-            <SocialLinks  size={size}/>
-          </div>
-          <Link to="/resume">Resume</Link>
+        <Span className="h1 hero-box_text text-center">gene radcliffe</Span>
+        <Span className="hero-box_text text-center" style={hero_sd_font}>software developer</Span> 
+        <div className="hero-social col-4"  >
+            <SocialLinks  size="lg"/>
+        </div>
+        <Link to="/resume">Resume</Link>
+        <p onClick={alpha}>Projects</p>
         </Hero>
-       </div> 
-    )
-}
-function Resume(){
-    let width = window.innerWidth
-    let height = window.innerHeight
+        
+    </div> 
+    <div id="project" className="projects">
+            <Project  />
+        </div>
+    </div>
     
-    return(
-        <embed src={resume} width={width} height={height} />
-
     )
 }
 const Span = styled.span`
@@ -63,24 +66,25 @@ const SocialLinks = props =>{
 }
 
 class Portfolio extends Component{
+    constructor(props){
+        super(props)
+
+        this.scrollToProject = this.scrollToProject.bind(this)
+    }
+    scrollToProject(){
+       console.log("hi")
+    }
+
     
     render(){
-        let size = 'lg'
-        let screen = window.matchMedia("(max-width: 360px)")
-        if(screen.matches){
-            console.log("matching")
-             size = "lg"
-        }else{
-            console.log("nonmatching")
-             size= "2x"
-        }
+        
         return(
         
             <Router>
                 <div id="index">
                 
-                <Route exact path="/" component={Home}></Route>
-                <Route path="/resume" component={Resume}></Route>
+                    <Route exact path="/" component={Home}></Route>
+                    <Route path="/resume" component={this.renderResume}></Route>
                 </div>
             </Router>
 
@@ -88,6 +92,17 @@ class Portfolio extends Component{
 
         );
     }
+    
+    renderResume(){
+        let width = window.innerWidth
+        let height = window.innerHeight
 
+        return(
+            <embed src={resume} width={width} height={height} />
+
+        )
+    }  
+    
 }
+
 export default Portfolio;

@@ -19,10 +19,7 @@ function Card(props){
         <div key={props.repo.key}>{props.repo.name}</div>
     )
 }
-function Projects(props){
-    const repos = props.repos
-   return 
-}
+
 class Project extends Component{
 
     constructor(props){
@@ -31,7 +28,7 @@ class Project extends Component{
             repos: [],
             isLoading: true,
         } 
-        this.loadGitHubRepos()
+        
     }
     componentDidMount(){
         
@@ -62,24 +59,34 @@ class Project extends Component{
 
     render(){
         const{repos, isLoading}= this.state;
-        if(isLoading == true){
+        if(isLoading == false){
             return <div><p className="loading loading-lg h1 ">Loading Github Repos</p></div>
         }
         
        
         return(
-            <div>
+            <React.Fragment>
                 <Header>Projects</Header>
                 <Slides config={slidesStyle}>
-                    <div className="card">
-                        <div className="card-header"><span className="card-title h5">GloveBox </span></div>
-                        <div className="card-body">GloveBox is  </div>
+                    < div className="card project-card">
+                        
+                        <div className="class-header project-card_header">
+                            <div className="card-title h5">GloveBox</div>
+                            <div className="card-subtitle text-gray"></div>
+                        </div>
+
+                        <div className="card-image project-card_image"></div>
+                        <div className="card-body">Glovebox provides users with a practical and efficient way of keeping track of vehicle maintenance. Declutter your glovebox and still keep the records that can increase your car's resale value!</div>
+
+                        <div className="card-footer project-card_footer">
+                            <a className="btn btn-primary">Live Code</a>
+                             <a className="btn btn-primary">Github</a>
+                        </div>
                     </div>
-                    <div>box2</div>
                     
                 </Slides>
 
-            </div>
+            </React.Fragment>
         )
     }
 
