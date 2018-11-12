@@ -68,22 +68,40 @@ class Project extends Component{
             <React.Fragment>
                 <Header>Projects</Header>
                 <Slides config={slidesStyle}>
-                    < div className="card project-card">
+                    <div>
+                    <div className="card project-card">
                         
                         <div className="class-header project-card_header">
-                            <div className="card-title h5">GloveBox</div>
-                            <div className="card-subtitle text-gray"></div>
+                            <div className="card-title h3">GloveBox</div>
+                            <div className="card-subtitle text-gray">Technologies: Ruby on Rails, Javascript, Onsen CSS & AWS S3</div>
                         </div>
-
+                        <div className="card-body project-card_body">Glovebox provides users with a practical and efficient way of keeping track of vehicle maintenance. Declutter your glovebox and still keep the records that can increase your car's resale value!</div>
+                        
+                        
                         <div className="card-image project-card_image"><img src="https://s3.amazonaws.com/generadcliffe/images/glovebox.png" /></div>
-                        <div className="card-body">Glovebox provides users with a practical and efficient way of keeping track of vehicle maintenance. Declutter your glovebox and still keep the records that can increase your car's resale value!</div>
-
                         <div className="card-footer project-card_footer">
-                            <a className="btn btn-primary">Live Code</a>
-                             <a className="btn btn-primary">Github</a>
+                            <a href="http://glovebox.tools" className="btn btn-primary project-link">Live Code</a>
+                             <a className="btn btn-primary project-link">Github</a>
                         </div>
                     </div>
-                    
+                    </div>
+                    <div>
+                    <div className="card project-card">
+                        
+                        <div className="class-header project-card_header">
+                            <div className="card-title h3">ImageResizerTool</div>
+                            <div className="card-subtitle text-gray">Technologies: Java</div>
+                        </div>
+                        <div className="card-body project-card_body">Glovebox provides users with a practical and efficient way of keeping track of vehicle maintenance. Declutter your glovebox and still keep the records that can increase your car's resale value!</div>
+                        
+                        
+                        <div className="card-image project-card_image"><img src="https://s3.amazonaws.com/generadcliffe/images/glovebox.png" /></div>
+                        <div className="card-footer project-card_footer">
+                            <a href="http://glovebox.tools" className="btn btn-primary project-link">Live Code</a>
+                             <a className="btn btn-primary project-link">Github</a>
+                        </div>
+                    </div>
+                    </div>
                 </Slides>
 
             </React.Fragment>

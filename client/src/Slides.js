@@ -111,7 +111,7 @@ class Slides extends Component{
             return(
                 <React.Fragment>
                     <div id="slides-container">
-                    <div>{this.renderRegular()}</div>
+                    {this.renderRegular()}
                     </div>   
                 </React.Fragment>
             )
