@@ -8,34 +8,64 @@ import 'spectre.css/dist/spectre.css';
 import Project from  './Project.js';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope }  from '@fortawesome/free-solid-svg-icons' 
+import { faEnvelope, faChevronDown }  from '@fortawesome/free-solid-svg-icons' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-library.add(fab, faEnvelope)
+library.add(fab, faEnvelope, faChevronDown)
 
+const StyledLink = styled(Link)`
+    margin: 0.2rem;
+    
+    &:link, &:visited{
+    
+        color: white;
+        text-decoration: none;
+        background-color: rgba(47, 97, 162,0.7);
+        padding: 0.5rem;
+    }
+    &:hover{
+        text-decoration: none;
+
+        background-color: rgba(47, 97, 162,1);
+        
+        
+        color: white;
+    }
+`
 function Home(){
-   
-    function alpha(){
-        let element = document.getElementById("project")
-        element.scrollIntoView()
+   const links_style={
+       textDecoration: 'none',
+        backgroundColor: 'rgb(8,3,42)',
+        color:'white',
+   }
+    function gotoProjects(){
+        let project = document.getElementById("project")
+        let top = project.offsetTop;
+        window.scrollBy({ 
+            top: top, 
+            left: 0, 
+            behavior: 'smooth' 
+          });
     }
     return(
         
-        <div className="home-index">
+    <div className="home-index">
         <div className="hero-header">
             
-        <Hero className="hero-box col-12">
-        <Span className="h1 hero-box_text text-center">gene radcliffe</Span>
-        <Span className="hero-box_text text-center" style={hero_sd_font}>software developer</Span> 
-        <div className="hero-social col-4"  >
-            <SocialLinks  size="lg"/>
-        </div>
-        <Link to="/resume">Resume</Link>
-            <a onClick={alpha}>Projects</a>
-        </Hero>
+            <Hero className="hero-box col-12">
+                <Span className="h1 hero-box_text text-center">gene radcliffe</Span>
+                <Span className="hero-box_text text-center" style={hero_sd_font}>software developer</Span> 
+                <div className="hero-social col-2"  >
+                    <SocialLinks  size="lg"/>
+                </div>
+                <div className="site-links text-center col-4">
+                <StyledLink to="/resume">Resume</StyledLink>
+                <StyledLink onClick={gotoProjects} to="/">Projects</StyledLink>
+                </div>
+            </Hero>
+            <div className="arrow"> <FontAwesomeIcon onClick={gotoProjects} size="lg" icon="chevron-down"/></div>
+        </div> 
         
-    </div> 
-    <div className="arrow-div"><i className="arrow down">&#10097;</i></div>
-    <div id="project" className="projects">
+        <div id="project" className="projects">
             <Project  />
         </div>
     </div>

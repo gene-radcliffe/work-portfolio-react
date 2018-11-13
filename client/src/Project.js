@@ -80,8 +80,8 @@ class Project extends Component{
                         
                         <div className="card-image project-card_image"><img src="https://s3.amazonaws.com/generadcliffe/images/glovebox.png" /></div>
                         <div className="card-footer project-card_footer">
-                            <a href="http://glovebox.tools" className="btn btn-primary project-link">Live Code</a>
-                             <a className="btn btn-primary project-link">Github</a>
+                            <a href="http://glovebox.tools" className="btn btn-primary project-link">Live Site</a>
+                             <a href="https://gene-radcliffe.github.io/GloveBox/" className="btn btn-primary project-link">Github</a>
                         </div>
                     </div>
                     </div>
@@ -92,12 +92,12 @@ class Project extends Component{
                             <div className="card-title h3">ImageResizerTool</div>
                             <div className="card-subtitle text-gray">Technologies: Java</div>
                         </div>
-                        <div className="card-body project-card_body">Glovebox provides users with a practical and efficient way of keeping track of vehicle maintenance. Declutter your glovebox and still keep the records that can increase your car's resale value!</div>
+                        <div className="card-body project-card_body">ImageResizerTool is a Java based image resizer and date stamp utility. The tool can resize images into three sizes, and the tool can read exif data embedded in the images to stamp it over the image file.</div>
                         
                         
-                        <div className="card-image project-card_image"><img src="https://s3.amazonaws.com/generadcliffe/images/glovebox.png" /></div>
+                        <div className="card-image project-card_image"><img src="https://s3.amazonaws.com/generadcliffe/images/imageresizertool.png" /></div>
                         <div className="card-footer project-card_footer">
-                            <a href="http://glovebox.tools" className="btn btn-primary project-link">Live Code</a>
+                            <a  className="btn btn-primary project-link">Download Code</a>
                              <a className="btn btn-primary project-link">Github</a>
                         </div>
                     </div>
