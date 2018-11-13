@@ -52,7 +52,7 @@ function Home(){
         <div className="hero-header">
             
             <Hero className="hero-box col-12">
-                <Span className="h1 hero-box_text text-center">gene radcliffe</Span>
+                <Span className=" hero-box_name text-center">gene radcliffe</Span>
                 <Span className="hero-box_text text-center" style={hero_sd_font}>software developer</Span> 
                 <div className="hero-social col-2"  >
                     <SocialLinks  size="lg"/>

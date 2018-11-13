@@ -97,8 +97,8 @@ class Project extends Component{
                         
                         <div className="card-image project-card_image"><img src="https://s3.amazonaws.com/generadcliffe/images/imageresizertool.png" /></div>
                         <div className="card-footer project-card_footer">
-                            <a  className="btn btn-primary project-link">Download Code</a>
-                             <a className="btn btn-primary project-link">Github</a>
+                           
+                             <a href="https://github.com/gene-radcliffe/ImageResizerApp" className="btn btn-primary project-link">Github</a>
                         </div>
                     </div>
                     </div>

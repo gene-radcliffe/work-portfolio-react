@@ -55,6 +55,9 @@ img{
   
   
 }
+.hero-box_name{
+  font-size: 3rem;
+}
 .icons{
   display: inline-block;
   text-align: center;
