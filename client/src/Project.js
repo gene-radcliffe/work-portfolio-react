@@ -101,6 +101,7 @@ class Project extends Component{
                              <a href="https://github.com/gene-radcliffe/ImageResizerApp" className="btn btn-primary project-link">Github</a>
                         </div>
                     </div>
+                   
                     </div>
                 </Slides>
 

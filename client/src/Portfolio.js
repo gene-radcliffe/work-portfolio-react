@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 library.add(fab, faEnvelope, faChevronDown)
 
 const StyledLink = styled(Link)`
-    margin: 0.2rem;
+  
     
     &:link, &:visited{
     
@@ -24,19 +24,12 @@ const StyledLink = styled(Link)`
     }
     &:hover{
         text-decoration: none;
-
         background-color: rgba(47, 97, 162,1);
-        
-        
         color: white;
     }
 `
 function Home(){
-   const links_style={
-       textDecoration: 'none',
-        backgroundColor: 'rgb(8,3,42)',
-        color:'white',
-   }
+   
     function gotoProjects(){
         let project = document.getElementById("project")
         let top = project.offsetTop;
@@ -54,12 +47,12 @@ function Home(){
             <Hero className="hero-box col-12">
                 <Span className=" hero-box_name text-center">gene radcliffe</Span>
                 <Span className="hero-box_text text-center" style={hero_sd_font}>software developer</Span> 
-                <div className="hero-social col-2"  >
-                    <SocialLinks  size="lg"/>
+                <div className="hero-social"  >
+                    <SocialLinks  size="2x"/>
                 </div>
-                <div className="site-links text-center col-4">
-                <StyledLink to="/resume">Resume</StyledLink>
-                <StyledLink onClick={gotoProjects} to="/">Projects</StyledLink>
+                <div className="site-links_container">
+                    <StyledLink className="site-links" to="/resume">Resume</StyledLink>
+                    <StyledLink className="site-links" onClick={gotoProjects} to="/">Projects</StyledLink>
                 </div>
             </Hero>
             <div className="arrow"> <FontAwesomeIcon onClick={gotoProjects} size="lg" icon="chevron-down"/></div>
@@ -89,9 +82,9 @@ const SocialLinks = props =>{
     let size = props.size
     return(
         <React.Fragment>
-            <a className="icons col-4" href="https://github.com/gene-radcliffe"><FontAwesomeIcon className="social-icons" size={size} icon={['fab', 'github']} /></a>
-            <a className="icons col-4" href="https://www.linkedin.com/in/gene-radcliffe-50203b13/"> <FontAwesomeIcon className="social-icons"  size={size} icon={['fab', 'linkedin']}/></a>
-            <a className="icons col-4" href="mailto:g_radcliffe82@hotmail.com" target="_top"> <FontAwesomeIcon className="social-icons" size={size} icon={['fa', 'envelope']}/></a>
+            <a className="social-icon_link col-4" href="https://github.com/gene-radcliffe"><FontAwesomeIcon className="social-icons" size={size} icon={['fab', 'github']} /></a>
+            <a className="social-icon_link col-4" href="https://www.linkedin.com/in/gene-radcliffe-50203b13/"> <FontAwesomeIcon className="social-icons"  size={size} icon={['fab', 'linkedin']}/></a>
+            <a className="social-icon_link col-4" href="mailto:g_radcliffe82@hotmail.com" target="_top"> <FontAwesomeIcon className="social-icons" size={size} icon={['fa', 'envelope']}/></a>
         </React.Fragment>
     )   
 }
