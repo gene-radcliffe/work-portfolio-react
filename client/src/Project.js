@@ -103,6 +103,26 @@ class Project extends Component{
                     </div>
                    
                     </div>
+                    <div>
+                    <div className="card project-card">
+                        
+                        <div className="class-header project-card_header">
+                            <div className="card-title h3">QuizBase</div>
+                            <div className="card-subtitle text-gray">Technologies: React, Javascript, Ruby on Rails, REST API </div>
+                        </div>
+                        <div className="card-body project-card_body">QuizBase is a group Project I made at Momentum in collaboraion with other developers. QuizBase is a quiz testing site that challenge users of their basic knowledge in Javascript or Ruby.
+                         We leverage React to develop our front-end quiz interface, while we used Ruby on Rails to develop our Rest API's. These endpoints provides the front-end access to quiz data and an endpoin to process the users quiz.  </div>
+                        
+                        
+                        <div className="card-image project-card_image"><img src="https://s3.amazonaws.com/generadcliffe/images/quizbase.png" /></div>
+                        <div className="card-footer project-card_footer">
+                        
+                            <a href="https://quizbase-radcliffe.firebaseapp.com/login" className="btn btn-primary project-link">Live Site</a>
+                            {/* <a href="https://github.com/gene-radcliffe/ImageResizerApp" className="btn btn-primary project-link">Github</a> */}
+                        </div>
+                    </div>
+                   
+                    </div>
                 </Slides>
 
             </React.Fragment>
