@@ -110,7 +110,7 @@ class Project extends Component{
                             <div className="card-title h3">QuizBase</div>
                             <div className="card-subtitle text-gray">Technologies: React, Javascript, Ruby on Rails, REST API </div>
                         </div>
-                        <div className="card-body project-card_body">QuizBase is a group Project I made at Momentum in collaboraion with other developers. QuizBase is a quiz testing site that challenge users of their basic knowledge in Javascript or Ruby.
+                        <div className="card-body project-card_body">QuizBase is a group Project I made at Momentum in collaboration with other developers. QuizBase is a quiz app that test users of their basic knowledge in Javascript or Ruby.
                          We leverage React to develop our front-end quiz interface, while we used Ruby on Rails to develop our Rest API's. These endpoints provides the front-end access to quiz data and an endpoin to process the users quiz.  </div>
                         
                         
